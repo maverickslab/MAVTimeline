@@ -10,6 +10,14 @@
 		994FF8F4241046B1001F98F4 /* MAVTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994FF8EA241046B0001F98F4 /* MAVTimeline.framework */; };
 		994FF8F9241046B1001F98F4 /* MAVTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF8F8241046B1001F98F4 /* MAVTimelineTests.swift */; };
 		994FF8FB241046B1001F98F4 /* MAVTimeline.h in Headers */ = {isa = PBXBuildFile; fileRef = 994FF8ED241046B0001F98F4 /* MAVTimeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		994FF906241047CE001F98F4 /* MAVTimelineUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF905241047CE001F98F4 /* MAVTimelineUnit.swift */; };
+		994FF907241047CE001F98F4 /* MAVTimelineUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF905241047CE001F98F4 /* MAVTimelineUnit.swift */; };
+		994FF9092410489E001F98F4 /* MAVTimelineLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF9082410489E001F98F4 /* MAVTimelineLevel.swift */; };
+		994FF90A2410489E001F98F4 /* MAVTimelineLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF9082410489E001F98F4 /* MAVTimelineLevel.swift */; };
+		994FF90C241048FF001F98F4 /* MAVTimelineDateControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF90B241048FF001F98F4 /* MAVTimelineDateControls.swift */; };
+		994FF90D241048FF001F98F4 /* MAVTimelineDateControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF90B241048FF001F98F4 /* MAVTimelineDateControls.swift */; };
+		994FF91024104A4D001F98F4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 994FF90F24104A4D001F98F4 /* Media.xcassets */; };
+		994FF91124104A4D001F98F4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 994FF90F24104A4D001F98F4 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,10 @@
 		994FF8F3241046B1001F98F4 /* MAVTimelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAVTimelineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		994FF8F8241046B1001F98F4 /* MAVTimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineTests.swift; sourceTree = "<group>"; };
 		994FF8FA241046B1001F98F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		994FF905241047CE001F98F4 /* MAVTimelineUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineUnit.swift; sourceTree = "<group>"; };
+		994FF9082410489E001F98F4 /* MAVTimelineLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineLevel.swift; sourceTree = "<group>"; };
+		994FF90B241048FF001F98F4 /* MAVTimelineDateControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineDateControls.swift; sourceTree = "<group>"; };
+		994FF90F24104A4D001F98F4 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,8 @@
 		994FF8EC241046B0001F98F4 /* MAVTimeline */ = {
 			isa = PBXGroup;
 			children = (
+				994FF90E24104A39001F98F4 /* Assets */,
+				994FF904241046F1001F98F4 /* Sources */,
 				994FF8ED241046B0001F98F4 /* MAVTimeline.h */,
 				994FF8EE241046B0001F98F4 /* Info.plist */,
 			);
@@ -84,6 +98,24 @@
 				994FF8FA241046B1001F98F4 /* Info.plist */,
 			);
 			path = MAVTimelineTests;
+			sourceTree = "<group>";
+		};
+		994FF904241046F1001F98F4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				994FF905241047CE001F98F4 /* MAVTimelineUnit.swift */,
+				994FF9082410489E001F98F4 /* MAVTimelineLevel.swift */,
+				994FF90B241048FF001F98F4 /* MAVTimelineDateControls.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		994FF90E24104A39001F98F4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				994FF90F24104A4D001F98F4 /* Media.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +180,7 @@
 				TargetAttributes = {
 					994FF8E9241046B0001F98F4 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					994FF8F2241046B1001F98F4 = {
 						CreatedOnToolsVersion = 11.3;
@@ -178,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994FF91024104A4D001F98F4 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994FF91124104A4D001F98F4 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994FF9092410489E001F98F4 /* MAVTimelineLevel.swift in Sources */,
+				994FF906241047CE001F98F4 /* MAVTimelineUnit.swift in Sources */,
+				994FF90C241048FF001F98F4 /* MAVTimelineDateControls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				994FF8F9241046B1001F98F4 /* MAVTimelineTests.swift in Sources */,
+				994FF90D241048FF001F98F4 /* MAVTimelineDateControls.swift in Sources */,
+				994FF90A2410489E001F98F4 /* MAVTimelineLevel.swift in Sources */,
+				994FF907241047CE001F98F4 /* MAVTimelineUnit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +381,7 @@
 		994FF8FF241046B1001F98F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L4V699MXNV;
@@ -356,6 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cool.mavericks.MAVTimeline;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +407,7 @@
 		994FF900241046B1001F98F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L4V699MXNV;
@@ -388,6 +432,7 @@
 		994FF902241046B1001F98F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4V699MXNV;
 				INFOPLIST_FILE = MAVTimelineTests/Info.plist;
@@ -406,6 +451,7 @@
 		994FF903241046B1001F98F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4V699MXNV;
 				INFOPLIST_FILE = MAVTimelineTests/Info.plist;
