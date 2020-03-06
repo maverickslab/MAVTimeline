@@ -7,14 +7,14 @@
 //
 
 import Foundation
-class MAVTimelineEvent {
+public class MAVTimelineEvent {
     
     //MARK: - Properties
     ///date of event
     public var date: Date
     
     //MARK: - Init
-    init(date: Date) {
+    public init(date: Date) {
         self.date = date
     }
     

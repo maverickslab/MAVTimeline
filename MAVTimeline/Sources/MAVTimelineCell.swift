@@ -22,7 +22,7 @@ class MAVTimelineCell: UICollectionViewCell {
         }
     }
     var level: MAVTimelineLevel = .month
-    weak var event: MAVTimelineEvent? = nil{
+    weak var event: MAVTimelineUnit? = nil{
         didSet{
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale.current
@@ -32,8 +32,16 @@ class MAVTimelineCell: UICollectionViewCell {
             }else{
                 dateFormatter.dateFormat = "MMM"
             }
-            self.eventLabel.text = dateFormatter.string(from: event?.date ?? Date())
+            self.eventLabel.text = dateFormatter.string(from: event?.start ?? Date())
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.leftSeparator.backgroundColor = MAVTimelineConfiguration.shared.separatorColor
+        self.rightSeparator.backgroundColor = MAVTimelineConfiguration.shared.separatorColor
+        self.eventLabel.textColor = MAVTimelineConfiguration.shared.dateLabelColor
+        
     }
 
 }

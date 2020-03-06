@@ -11,6 +11,10 @@
 		99273E922412B4C100D620A1 /* MAVTimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99273E8F2412B4C000D620A1 /* MAVTimelineCell.swift */; };
 		99273E932412B4C100D620A1 /* MAVTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99273E902412B4C000D620A1 /* MAVTimelineCell.xib */; };
 		99273E942412B4C100D620A1 /* MAVTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99273E902412B4C000D620A1 /* MAVTimelineCell.xib */; };
+		99273E962412D14A00D620A1 /* MAVTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99273E952412D14A00D620A1 /* MAVTimelineViewController.swift */; };
+		99273E972412D14A00D620A1 /* MAVTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99273E952412D14A00D620A1 /* MAVTimelineViewController.swift */; };
+		99273E992412D16700D620A1 /* MAVTimelineConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99273E982412D16700D620A1 /* MAVTimelineConfiguration.swift */; };
+		99273E9A2412D16700D620A1 /* MAVTimelineConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99273E982412D16700D620A1 /* MAVTimelineConfiguration.swift */; };
 		994FF8F4241046B1001F98F4 /* MAVTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994FF8EA241046B0001F98F4 /* MAVTimeline.framework */; };
 		994FF8F9241046B1001F98F4 /* MAVTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF8F8241046B1001F98F4 /* MAVTimelineTests.swift */; };
 		994FF8FB241046B1001F98F4 /* MAVTimeline.h in Headers */ = {isa = PBXBuildFile; fileRef = 994FF8ED241046B0001F98F4 /* MAVTimeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +45,8 @@
 /* Begin PBXFileReference section */
 		99273E8F2412B4C000D620A1 /* MAVTimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineCell.swift; sourceTree = "<group>"; };
 		99273E902412B4C000D620A1 /* MAVTimelineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAVTimelineCell.xib; sourceTree = "<group>"; };
+		99273E952412D14A00D620A1 /* MAVTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineViewController.swift; sourceTree = "<group>"; };
+		99273E982412D16700D620A1 /* MAVTimelineConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineConfiguration.swift; sourceTree = "<group>"; };
 		994FF8EA241046B0001F98F4 /* MAVTimeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MAVTimeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994FF8ED241046B0001F98F4 /* MAVTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAVTimeline.h; sourceTree = "<group>"; };
 		994FF8EE241046B0001F98F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 		994FF904241046F1001F98F4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				99273E982412D16700D620A1 /* MAVTimelineConfiguration.swift */,
 				994FF905241047CE001F98F4 /* MAVTimelineUnit.swift */,
 				994FF912241058FB001F98F4 /* MAVTimelineEvent.swift */,
 				994FF9082410489E001F98F4 /* MAVTimelineLevel.swift */,
@@ -122,6 +129,7 @@
 				994FF915241059B3001F98F4 /* MAVTimelineDataSource.swift */,
 				99273E8F2412B4C000D620A1 /* MAVTimelineCell.swift */,
 				99273E902412B4C000D620A1 /* MAVTimelineCell.xib */,
+				99273E952412D14A00D620A1 /* MAVTimelineViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -250,7 +258,9 @@
 			files = (
 				994FF9092410489E001F98F4 /* MAVTimelineLevel.swift in Sources */,
 				994FF906241047CE001F98F4 /* MAVTimelineUnit.swift in Sources */,
+				99273E962412D14A00D620A1 /* MAVTimelineViewController.swift in Sources */,
 				994FF913241058FB001F98F4 /* MAVTimelineEvent.swift in Sources */,
+				99273E992412D16700D620A1 /* MAVTimelineConfiguration.swift in Sources */,
 				994FF916241059B3001F98F4 /* MAVTimelineDataSource.swift in Sources */,
 				994FF90C241048FF001F98F4 /* MAVTimelineDateControls.swift in Sources */,
 				99273E912412B4C000D620A1 /* MAVTimelineCell.swift in Sources */,
@@ -265,9 +275,11 @@
 				994FF914241058FB001F98F4 /* MAVTimelineEvent.swift in Sources */,
 				994FF90D241048FF001F98F4 /* MAVTimelineDateControls.swift in Sources */,
 				994FF90A2410489E001F98F4 /* MAVTimelineLevel.swift in Sources */,
+				99273E972412D14A00D620A1 /* MAVTimelineViewController.swift in Sources */,
 				99273E922412B4C100D620A1 /* MAVTimelineCell.swift in Sources */,
 				994FF917241059B3001F98F4 /* MAVTimelineDataSource.swift in Sources */,
 				994FF907241047CE001F98F4 /* MAVTimelineUnit.swift in Sources */,
+				99273E9A2412D16700D620A1 /* MAVTimelineConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

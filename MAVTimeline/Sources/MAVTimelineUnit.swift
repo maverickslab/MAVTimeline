@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MAVTimelineUnit {
+public class MAVTimelineUnit {
     
     //MARK: - Properties
     ///Title: Label to show
