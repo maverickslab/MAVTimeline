@@ -14,18 +14,30 @@ public class MAVTimelineViewController: UIViewController {
     //Collection view
     /// That contains the items
     public lazy var collectionView: UICollectionView = {
+        
+        ///Collection View Declaration
         let collectionView = UICollectionView()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(MAVTimelineCell.self, forCellWithReuseIdentifier: "timelineIdentifier")
+        
+        /// Date Controls declaration
         self.dateControls = MAVTimelineDateControls(frame: CGRect(x: 0, y: 0, width: 250.0, height: 100.0), level: self.level, currentDate: self.currentDate ?? Date())
         self.dateControls?.translatesAutoresizingMaskIntoConstraints = false
         self.dateControls?.delegate = self
+        
+        ///Contraint's logic
+        ///Add subviews
         self.view.addSubview(self.dateControls ?? UIView())
         self.view.addSubview(collectionView)
+        
+        ///Add constraints
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-[collection]-|", options: [], metrics: nil, views: ["collection" : collectionView]))
         self.view.addConstraint(NSLayoutConstraint(item: self.dateControls ?? UIView(), attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 1.0))
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(5)-[controls]-(5)-[collection]-|", options: [], metrics: nil, views: ["collection" : collectionView]))
+        
+        ///Retrun collection view
         return collectionView
     }()
     
@@ -75,29 +87,63 @@ public class MAVTimelineViewController: UIViewController {
     //MARK: - Load data
     /// Logic to fill data
     func loadData(){
+        
+        ///Set empty array of events
         self.events = []
+        
+        ///Instantiate gregorian calendar
         let calendar = Calendar.current
+        
+        ///If the level is year. Fill twelve months from january to december
         if(level == .year){
+            
+            ///Bucle of twelve months
             for i in 0..<12{
+                
+                ///First I put current's date components
                 var dateComponents = calendar.dateComponents([.day,.month,.year], from: self.currentDate ?? Date())
+                
+                ///Set month of that components
                 dateComponents.month = i
+                
+                ///Get the date
                 let candidateDate = dateComponents.date ?? Date()
+                
+                ///Fill the event
                 let start = candidateDate.beginMonth()
                 let end = candidateDate.endMonth()
                 let title = start.monthStr()
                 let event = MAVTimelineUnit(title: title, start: start, end: end)
+                
+                ///Push to the event array
                 self.events.append(event)
             }
-        }else{
+        }
+            ///If the level is month. Fill the days of this month
+        else{
+            
+            ///Retrieve the number of days (length)
             let days = self.currentDate?.numberOfDays() ?? 30
+            
+            ///Bucle of these days
             for i in 0..<days{
-               var dateComponents = calendar.dateComponents([.day,.month,.year], from: self.currentDate ?? Date())
+                
+                ///Get the current date components
+                var dateComponents = calendar.dateComponents([.day,.month,.year], from: self.currentDate ?? Date())
+                
+                ///Set the current day
                 dateComponents.day = i
+                
+                ///Get the date
                 let candidateDate = dateComponents.date ?? Date()
+                
+                ///Fill event
                 let start = candidateDate.beginDay()
                 let end = candidateDate.endDay()
                 let title = i < 10 ? "0\(i)" : "\(i)"
                 let event = MAVTimelineUnit(title: title, start: start, end: end)
+                
+                ///Push to event's array
                 self.events.append(event)
             }
         }
@@ -107,14 +153,21 @@ public class MAVTimelineViewController: UIViewController {
 
 //MARK: - Collection view Delegate and Data Source
 extension MAVTimelineViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    //MARK: - Number of events
+    /// When you have events. The collection view receive that number of events
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.events.count
     }
     
+    //MARK: - Sections
+    /// For that ui, it's only necessary 1 section
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
+    //MARK: - Render cell
+    /// Render Timeline identifier
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timelineIdentifier", for: indexPath) as? MAVTimelineCell{
             cell.event = self.events[indexPath.row]
@@ -128,76 +181,22 @@ extension MAVTimelineViewController: UICollectionViewDelegate, UICollectionViewD
 
 //MARK: - Date Controls Delegate
 extension MAVTimelineViewController: MAVTimelineDateControlsDelegate{
+    
+    //MARK: - Did Back to date
+    ///If there's back to last month or last year (maybe in that case is only year)
     public func didBackToDate(date: Date) {
         self.currentDate = date
     }
     
+    //MARK: - Did forward to date
+    ///Forward to next year
     public func didForwardToDate(date: Date) {
         self.currentDate = date
     }
     
+    //MARK: - Back To Mode
+    /// Back to month
     public func backToMode(mode: MAVTimelineLevel) {
         self.level = mode
     }
-}
-
-extension Date{
-    
-    func numberOfDays()->Int{
-        let calendar = Calendar.current
-        if let range = calendar.range(of: .day, in: .month, for: self){
-            let numDays = range.count
-            print(numDays) // 31
-            return numDays
-        }
-        return 30
-    }
-    
-    func beginMonth()->Date{
-        let calendar = Calendar.current
-        var dateComponents = calendar.dateComponents([.day,.month,.year,.hour,.minute,.second], from: self)
-        dateComponents.day = 1
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        return dateComponents.date ?? Date()
-    }
-    
-    func endMonth()->Date{
-        let calendar = Calendar.current
-        var dateComponents = calendar.dateComponents([.day,.month,.year,.hour,.minute,.second], from: self)
-        dateComponents.day = -1
-        dateComponents.month = dateComponents.month ?? 11 - 1
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        return dateComponents.date ?? Date()
-    }
-    
-    func beginDay()->Date{
-        let calendar = Calendar.current
-        var dateComponents = calendar.dateComponents([.day,.month,.year,.hour,.minute,.second], from: self)
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        return dateComponents.date ?? Date()
-    }
-    
-    func endDay()->Date{
-        let calendar = Calendar.current
-        var dateComponents = calendar.dateComponents([.day,.month,.year,.hour,.minute,.second], from: self)
-        dateComponents.hour = 23
-        dateComponents.minute = 59
-        dateComponents.second = 59
-        return dateComponents.date ?? Date()
-    }
-    
-    func monthStr()->String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "MMM"
-        return dateFormatter.string(from: self)
-    }
-    
 }
