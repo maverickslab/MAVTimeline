@@ -8,12 +8,11 @@
 
 import Foundation
 
-protocol MAVTimeLineDataSource {
-    func hasEvent(on Date: Date) -> Bool
+public protocol MAVTimeLineDataSource: class {
+    func hasEvent(beetween date: Date, and date: Date) -> Bool
 }
 
 
-protocol MAVTimeLineDelegate: class {
-    func didChangeDate(date: Date, level: MAVTimelineLevel)
+public protocol MAVTimeLineDelegate: class {
     func didSelectEvent(at date: Date)
 }

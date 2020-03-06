@@ -65,6 +65,14 @@ public class MAVTimelineViewController: UIViewController {
         }
     }
     
+    //Data Source
+    /// Timeline's data source
+    open weak var dataSource: MAVTimeLineDataSource? = nil
+    
+    //Delegate
+    /// Timeline's data delegate
+    open weak var delegate: MAVTimeLineDelegate? = nil
+    
     //Date Controls
     /// Controls to switch year or month
     fileprivate var dateControls: MAVTimelineDateControls? = nil
@@ -169,9 +177,27 @@ extension MAVTimelineViewController: UICollectionViewDelegate, UICollectionViewD
     //MARK: - Render cell
     /// Render Timeline identifier
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        ///Declare cell
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timelineIdentifier", for: indexPath) as? MAVTimelineCell{
+            ///Set event
             cell.event = self.events[indexPath.row]
+            
+            ///Set index
             cell.index = indexPath.row
+            
+            ///declare event
+            let event = self.events[indexPath.row]
+            
+            /// If there's event beetween dates you must show the circle
+            if let dataSource = self.dataSource{
+                if(dataSource.hasEvent(beetween: event.start, and: event.end)){
+                    cell.circleLabel.isHidden = false
+                }else{
+                    cell.circleLabel.isHidden = false
+                }
+            }
+            
             return cell
         }
         return UICollectionViewCell()
