@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99273E912412B4C000D620A1 /* MAVTimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99273E8F2412B4C000D620A1 /* MAVTimelineCell.swift */; };
+		99273E922412B4C100D620A1 /* MAVTimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99273E8F2412B4C000D620A1 /* MAVTimelineCell.swift */; };
+		99273E932412B4C100D620A1 /* MAVTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99273E902412B4C000D620A1 /* MAVTimelineCell.xib */; };
+		99273E942412B4C100D620A1 /* MAVTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99273E902412B4C000D620A1 /* MAVTimelineCell.xib */; };
 		994FF8F4241046B1001F98F4 /* MAVTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994FF8EA241046B0001F98F4 /* MAVTimeline.framework */; };
 		994FF8F9241046B1001F98F4 /* MAVTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF8F8241046B1001F98F4 /* MAVTimelineTests.swift */; };
 		994FF8FB241046B1001F98F4 /* MAVTimeline.h in Headers */ = {isa = PBXBuildFile; fileRef = 994FF8ED241046B0001F98F4 /* MAVTimeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,6 +24,8 @@
 		994FF91124104A4D001F98F4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 994FF90F24104A4D001F98F4 /* Media.xcassets */; };
 		994FF913241058FB001F98F4 /* MAVTimelineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF912241058FB001F98F4 /* MAVTimelineEvent.swift */; };
 		994FF914241058FB001F98F4 /* MAVTimelineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF912241058FB001F98F4 /* MAVTimelineEvent.swift */; };
+		994FF916241059B3001F98F4 /* MAVTimelineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF915241059B3001F98F4 /* MAVTimelineDataSource.swift */; };
+		994FF917241059B3001F98F4 /* MAVTimelineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FF915241059B3001F98F4 /* MAVTimelineDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99273E8F2412B4C000D620A1 /* MAVTimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineCell.swift; sourceTree = "<group>"; };
+		99273E902412B4C000D620A1 /* MAVTimelineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAVTimelineCell.xib; sourceTree = "<group>"; };
 		994FF8EA241046B0001F98F4 /* MAVTimeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MAVTimeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994FF8ED241046B0001F98F4 /* MAVTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAVTimeline.h; sourceTree = "<group>"; };
 		994FF8EE241046B0001F98F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +52,7 @@
 		994FF90B241048FF001F98F4 /* MAVTimelineDateControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineDateControls.swift; sourceTree = "<group>"; };
 		994FF90F24104A4D001F98F4 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		994FF912241058FB001F98F4 /* MAVTimelineEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineEvent.swift; sourceTree = "<group>"; };
+		994FF915241059B3001F98F4 /* MAVTimelineDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVTimelineDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +119,9 @@
 				994FF912241058FB001F98F4 /* MAVTimelineEvent.swift */,
 				994FF9082410489E001F98F4 /* MAVTimelineLevel.swift */,
 				994FF90B241048FF001F98F4 /* MAVTimelineDateControls.swift */,
+				994FF915241059B3001F98F4 /* MAVTimelineDataSource.swift */,
+				99273E8F2412B4C000D620A1 /* MAVTimelineCell.swift */,
+				99273E902412B4C000D620A1 /* MAVTimelineCell.xib */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -216,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				994FF91024104A4D001F98F4 /* Media.xcassets in Resources */,
+				99273E932412B4C100D620A1 /* MAVTimelineCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				994FF91124104A4D001F98F4 /* Media.xcassets in Resources */,
+				99273E942412B4C100D620A1 /* MAVTimelineCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +251,9 @@
 				994FF9092410489E001F98F4 /* MAVTimelineLevel.swift in Sources */,
 				994FF906241047CE001F98F4 /* MAVTimelineUnit.swift in Sources */,
 				994FF913241058FB001F98F4 /* MAVTimelineEvent.swift in Sources */,
+				994FF916241059B3001F98F4 /* MAVTimelineDataSource.swift in Sources */,
 				994FF90C241048FF001F98F4 /* MAVTimelineDateControls.swift in Sources */,
+				99273E912412B4C000D620A1 /* MAVTimelineCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +265,8 @@
 				994FF914241058FB001F98F4 /* MAVTimelineEvent.swift in Sources */,
 				994FF90D241048FF001F98F4 /* MAVTimelineDateControls.swift in Sources */,
 				994FF90A2410489E001F98F4 /* MAVTimelineLevel.swift in Sources */,
+				99273E922412B4C100D620A1 /* MAVTimelineCell.swift in Sources */,
+				994FF917241059B3001F98F4 /* MAVTimelineDataSource.swift in Sources */,
 				994FF907241047CE001F98F4 /* MAVTimelineUnit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

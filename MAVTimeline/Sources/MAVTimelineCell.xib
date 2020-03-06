@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MAVTimelineCell" customModule="MAVTimeline" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="93"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="93"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aUO-KI-5fw">
+                        <rect key="frame" x="7" y="5" width="104" height="77"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2X-Qi-k2C">
+                                <rect key="frame" x="0.0" y="0.0" width="10" height="77"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="vcF-3E-3wD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VDQ-fJ-h4N">
+                                <rect key="frame" x="18" y="0.0" width="68" height="77"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oua-sD-3vS">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="65"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Sx-6s-dKI">
+                                                <rect key="frame" x="24" y="22.5" width="20" height="20"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="81U-dI-0PF"/>
+                                                    <constraint firstAttribute="height" constant="20" id="A22-tX-pEd"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="6Sx-6s-dKI" firstAttribute="centerY" secondItem="oua-sD-3vS" secondAttribute="centerY" id="M5q-7z-ggk"/>
+                                            <constraint firstItem="6Sx-6s-dKI" firstAttribute="centerX" secondItem="oua-sD-3vS" secondAttribute="centerX" id="uTW-o4-Bqp"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pb2-le-DJE">
+                                        <rect key="frame" x="0.0" y="65" width="68" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3o-j3-WPG">
+                                <rect key="frame" x="94" y="0.0" width="10" height="77"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Z2X-Qi-k2C" firstAttribute="width" secondItem="H3o-j3-WPG" secondAttribute="width" id="Vpe-wI-bxe"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="aUO-KI-5fw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="6NC-dB-3up"/>
+                <constraint firstItem="aUO-KI-5fw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="H8V-YG-oNO"/>
+                <constraint firstAttribute="trailing" secondItem="aUO-KI-5fw" secondAttribute="trailing" constant="8" id="gPE-e5-TBt"/>
+                <constraint firstAttribute="bottom" secondItem="aUO-KI-5fw" secondAttribute="bottom" constant="8" id="qTa-iu-7f3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="120" height="93"/>
+            <connections>
+                <outlet property="circleLabel" destination="6Sx-6s-dKI" id="WsN-Wr-pxB"/>
+                <outlet property="eventLabel" destination="pb2-le-DJE" id="17t-Wp-jDF"/>
+                <outlet property="leftSeparator" destination="Z2X-Qi-k2C" id="VVN-9g-iad"/>
+                <outlet property="rightSeparator" destination="H3o-j3-WPG" id="WGM-F2-Dz5"/>
+            </connections>
+            <point key="canvasLocation" x="188.40579710144928" y="156.36160714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>
