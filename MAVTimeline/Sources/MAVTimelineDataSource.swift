@@ -14,5 +14,5 @@ public protocol MAVTimeLineDataSource: class {
 
 
 public protocol MAVTimeLineDelegate: class {
-    func didSelectEvent(at date: Date)
+    func didSelectEvent(beetween date: Date, and date: Date)
 }

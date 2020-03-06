@@ -77,6 +77,10 @@ public class MAVTimelineViewController: UIViewController {
     /// Controls to switch year or month
     fileprivate var dateControls: MAVTimelineDateControls? = nil
     
+    //Selected Index
+    /// Switch the mark to the curent date
+    fileprivate var selectedIndex: Int? = nil
+    
     //MARK: - Init
     convenience init(date: Date, level: MAVTimelineLevel){
         self.init()
@@ -201,6 +205,27 @@ extension MAVTimelineViewController: UICollectionViewDelegate, UICollectionViewD
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    //MARK: - Did select day or month
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //First Check if there's events
+        guard events.count > 0 else{ return }
+        
+        //Check the delegate
+        guard let delegate = self.delegate else{ return }
+        
+        ///Event assignment
+        let event = events[indexPath.row]
+        
+        //Delegate trigger
+        delegate.didSelectEvent(beetween: event.start, and: event.end)
+        
+        //Selected Index
+        self.selectedIndex = indexPath.row
+        
+        //Reload data
+        self.collectionView.reloadData()
     }
     
 }
